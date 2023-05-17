@@ -22,21 +22,23 @@ def test_dish():
     # Test __repr__
     assert str(dish1) == "Dish('Estrogonofe', R$10.00)"
 
+    # Test raises
     with pytest.raises(TypeError, match="Dish price must be float."):
         Dish("Macarrão", "5")
-
     with pytest.raises(
         ValueError, match="Dish price must be greater then zero."
     ):
         Dish("Macarrão", -5)
 
+    # Test Ingredients
     ingredient = Ingredient("salmão")
-    dish1.add_ingredient_dependency(ingredient, 2)
-    all_ingredients = dish1.get_ingredients()
-    assert all_ingredients == {Ingredient('salmão')}
+    dish = Dish("Estrogonofe", 10.00)
+    dish.add_ingredient_dependency(ingredient, 2)
 
-    ingredient_salmao = dish1.get_restrictions()
-    assert ingredient_salmao == {
+    assert dish.get_ingredients() == {Ingredient("salmão")}
+
+    # Test Restrictions
+    assert dish.get_restrictions() == {
         Restriction.SEAFOOD,
         Restriction.ANIMAL_DERIVED,
         Restriction.ANIMAL_MEAT,
