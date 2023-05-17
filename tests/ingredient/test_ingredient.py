@@ -6,14 +6,22 @@ from src.models.ingredient import (
 
 # Req 1
 def test_ingredient():
-    farinha1 = Ingredient("farinha")
-    farinha2 = Ingredient("farinha")
-    presunto = Ingredient("presunto")
+    # Instantiate ingredients
+    ingredient1 = Ingredient("farinha")
+    ingredient2 = Ingredient("farinha")
+    ingredient3 = Ingredient("presunto")
 
-    assert farinha1.name == "farinha"
-    assert farinha1.restrictions == {Restriction.GLUTEN}
-    assert str(farinha1) == "Ingredient('farinha')"  # __repr__
-    assert farinha1 == farinha2  # __eq__
-    assert farinha1 != presunto  # __eq__
-    assert hash(farinha1) == hash(farinha2)  # __hash__
-    assert hash(farinha1) != hash(presunto)  # __hash__
+    # Test __repr__
+    assert str(ingredient1) == "Ingredient('farinha')"
+
+    # Test __eq__
+    assert ingredient1 == ingredient2
+    assert ingredient1 != ingredient3
+
+    # Test __hash__
+    assert hash(ingredient1) == hash(ingredient2)
+    assert hash(ingredient1) != hash(ingredient3)
+
+    # Test attributes
+    assert ingredient1.name == "farinha"
+    assert ingredient1.restrictions == {Restriction.GLUTEN}
