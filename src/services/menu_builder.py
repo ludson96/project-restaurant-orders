@@ -39,8 +39,8 @@ class MenuBuilder:
             }
 
             if (
-                restriction is None
-                or restriction not in dish.get_restrictions()
+                self.inventory.check_recipe_availability(dish.recipe)
+                and restriction not in dish.get_restrictions()
             ):
                 menu_df = menu_df.append(dish_info, ignore_index=True)
 

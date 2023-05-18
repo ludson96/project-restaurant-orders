@@ -33,7 +33,7 @@ class InventoryMapping:
                 or self.inventory[ingrediente] < quantidade_requerida
             ):
                 return False
-            return True
+        return True
 
     # Req 5.2
     def consume_recipe(self, recipe: Recipe) -> None:
@@ -43,5 +43,4 @@ class InventoryMapping:
                 or self.inventory[ingrediente] < quantidade_usada
             ):
                 raise ValueError("Quantidade invalida")
-
             self.inventory[ingrediente] -= quantidade_usada
