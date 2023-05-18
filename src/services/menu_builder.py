@@ -2,7 +2,6 @@ import pandas as pd
 
 from services.inventory_control import InventoryMapping
 from services.menu_data import MenuData
-from src.models.ingredient import Ingredient
 
 DATA_PATH = "data/menu_base_data.csv"
 INVENTORY_PATH = "data/inventory_base_data.csv"
@@ -27,7 +26,6 @@ class MenuBuilder:
 
     # Req 4
     def get_main_menu(self, restriction=None) -> pd.DataFrame:
-        print("🚀 ~ file: menu_builder.py:30 ~ restriction:", restriction)
         menu_df = pd.DataFrame(
             columns=["dish_name", "ingredients", "price", "restrictions"]
         )
