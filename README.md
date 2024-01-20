@@ -67,15 +67,15 @@ Neste projeto, pequei uma implementação em andamento e tive que dar continuida
     # Acesse http://127.0.0.1:8000/docs no navegador para ver a documentação gerada pelo FastAPI.
     ```
 
-<!-- </details> -->
+</details>
 
-<!-- ## Detalhamento das funções
+## Detalhamento das funções
 
 Abaixo está uma lista das funções disponíveis.
 
-<!-- <details> -->
+<details>
 
-<!-- ### `study_schedule(permanence_period, target_time)`
+### `study_schedule(permanence_period, target_time)`
 
 - localizado em `challenges/challenge_study_schedule.py`
 
@@ -105,7 +105,7 @@ target_time = 1  # saída: 2, pois a segunda e a quarta pessoa estudante estavam
 Para esse exemplo, depois de rodar a função para todos esses `target_times`, julgamos que o melhor horário é o `2`, pois esse retornou `4`, já que 4 estudantes estavam presentes nesse horário!
 ```
 
-</details> -->
+</details>
 
 [Git-logo]: https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white
 [Git-url]: https://git-scm.com
